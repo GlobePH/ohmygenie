@@ -1,0 +1,88 @@
+<div class="container-fluid main-content" id="user-timeline">
+	<h3 class="text-center">Timeline</h3>
+	<hr>
+	<table class="table table-hover">
+		<thead>
+		  <tr>
+			<th>Job ID</th>
+			<th>Job Title</th>
+			<th>Worker</th>
+			<th>Target Completion</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<tr id="ABF-09875-56">
+				<td>
+					ABF-09875-56
+				</td>
+				<td>
+					Clean Bathroom
+				</td>
+				<td>
+					Jason Dizon
+				</td>
+				<td>
+					July 23, 2017
+				</td>
+			</tr>
+			<tr id="ABF-09943-13">
+				<td>
+					ABF-09943-13
+				</td>
+				<td>
+					Install Wallmount
+				</td>
+				<td>
+					Ardie Cruz
+				</td>
+				<td>
+					June 28, 2017
+				</td>
+			</tr>
+			<tr id="ABF-09972-76">
+				<td>
+					ABF-09972-76
+				</td>
+				<td>
+					Fix Furniture
+				</td>
+				<td>
+					Simon Vergara
+				</td>
+				<td>
+					June 29, 2017
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script>
+$(document).ready(function(){
+	$("#ABF-09875-56").on("click", function(){
+		$("#user-content").load( "user/task/ABF-09875-56-2.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+
+	$("#ABF-09943-13").on("click", function(){
+		$("#user-content").load( "user/task/ABF-09943-13.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+	
+	$("#ABF-09972-76").on("click", function(){
+		$("#user-content").load( "user/task/ABF-09972-76.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+});
+</script>

@@ -1,0 +1,158 @@
+<div class="container-fluid main-content">
+	<h3 class="text-center">Reviews</h3>
+	<hr>
+	<div class="history-detail">
+		<p><strong><font size="4" color="#303030">Overall User Rating: </font></strong><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></p>
+	</div>
+	<hr>
+	<div class="row">
+		<h4><strong>Genie Reviews<strong></h4>
+	</div>
+	<table class="table table-condensed" style="border-collapse:collapse;">
+
+			<tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+				<td>Plumber Glenn</td>
+				<td></td>
+				<td></td>
+				<td>Rating:   <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></td>
+				<td></td>
+			</tr>
+			<tr >
+				<td colspan="6" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo1"> 
+						<div class="container-fluid history-detail">
+							<div class="col-sm-5">
+								<div class="row">
+									<p><strong>Task Title:</strong> Reformat PC</p>
+								</div>
+								<div>
+									<p><strong>Description:</strong></p>
+									<p>Reformat my Windows 7 Laptop to Windows 10, original software will be provided</p>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="row">
+									<p><strong>Worker:</strong> Michael Santos</p>
+								</div>
+								<div>
+									<div class="img-thumbnail">
+										<img src="../images/worker/omg-worker-1.jpg" alt="BGC" width="100" height="90">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="row">
+									<p><strong>Review:</strong></p>
+								</div>
+								<div>
+									<p>Got the job done in a jiffy. Splendid job!</p>
+								</div>
+							</div>
+						</div>
+					</div> 
+				</td>
+			</tr>
+			<tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+				<td>Driver Dan</td>
+				<td></td>
+				<td></td>
+				<td>Rating:   <span>☆</span><span>☆</span><span>☆</span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="6" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo2"> 
+						<div class="container-fluid history-detail">
+							<div class="col-sm-5">
+								<div class="row">
+									<p><strong>Task Title:</strong> Deliver Groceries</p>
+								</div>
+								<div>
+									<p><strong>Description:</strong></p>
+									<p>Need to bought groceries from S&R and deliver to my home.</p>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="row">
+									<p><strong>Worker:</strong> Anfonso de Leon</p>
+								</div>
+								<div>
+									<div class="img-thumbnail">
+										<img src="../images/worker/omg-worker-2.jpg" alt="BGC" width="100" height="90">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="row">
+									<p><strong>Review:</strong></p>
+								</div>
+								<div>
+									<p>Fast yet sloppy delivery. Some of the items are even damaged. SMH</p>
+								</div>
+							</div>
+						</div>
+					</div> 
+				</td>
+			</tr>
+			<tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
+				<td>Builder Bob</td>
+				<td></td>
+				<td></td>
+				<td>Rating:   <span>☆</span><span>☆</span><span>☆</span><span>☆</span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="6" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo3"> 
+						<div class="container-fluid history-detail">
+							<div class="col-sm-5">
+								<div class="row">
+									<p><strong>Task Title:</strong> Housekeeping</p>
+								</div>
+								<div>
+									<p><strong>Description:</strong></p>
+									<p>Clean condo unit.</p>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="row">
+									<p><strong>Worker:</strong> Minerva Cruz</p>
+								</div>
+								<div>
+									<div class="img-thumbnail">
+										<img src="../images/worker/omg-worker-3.jpg" alt="BGC" width="100" height="90">
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="row">
+									<p><strong>Review:</strong></p>
+								</div>
+								<div>
+									<p>Would have been 5 stars if only she did the work with a smile.</p>
+								</div>
+							</div>
+						</div>
+					</div> 
+				</td>
+			</tr>
+
+	</table>		
+			
+	<div >
+		<button type="button" class="btn btn-default" id="newGenieReview" >Review a User</button>
+	</div>
+		
+</div>
+<script>
+$(document).ready( function(){
+	$("#newGenieReview").on("click", function(){
+		$("#user-content").load( "user/reviews/newreview.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+});
+</script>

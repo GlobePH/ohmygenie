@@ -1,0 +1,55 @@
+<div class="container-fluid">
+	<h3 class="text-center">Reviews</h3>
+	<hr>
+	<form id="createTask">
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobTitle">User Name: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input class="form-control" id="jobTitle" name="jobTitle" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobCategory">Rating: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<button class="btn btn-block btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="jobCategory"><span class="caret"></span></button>
+				<ul class="dropdown-menu" style="left:0;">
+					<li><a href="#">1 star</a></li>
+					<li><a href="#">2 star</a></li>
+					<li><a href="#">3 star</a></li>
+					<li><a href="#">4 star</a></li>
+					<li><a href="#">5 star</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobDescription">Write Review: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<textarea class="form-control" rows="5" id="jobDescription"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-sm-offset-1 form-group">
+				<button type="button" class="btn btn-default" id="createReview">Submit Review</button>
+				<button type="button" class="btn btn-default" id="cancelReview">Cancel</button>
+			</div>
+		</div>
+	</form		
+</div>
+<script>
+$(document).ready( function(){
+	$("#cancelReview").on("click", function(){
+		$("#user-content").load( "genie/reviews/geniereviews.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+});
+</script>

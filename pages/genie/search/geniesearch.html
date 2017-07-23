@@ -1,0 +1,163 @@
+<div class="container-fluid main-content">
+	<h3 class="text-center">Search Result</h3>
+	
+	<ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#genieResult">Genie</a></li>
+	</ul>
+	
+	<div class="tab-content">		
+		<div id="genieResult" class="tab-pane fade">
+			<br>
+			<div class="row">
+				<div class="container-fluid search-result">
+					<div class="col-sm-3">
+						<div class="row text-center">
+							<p><strong>Enersto Matias</strong></p>
+						</div>
+						<div class="row">
+								<img src="../images/search/genie-1.jpg" class="img-thumbnail img-search" alt="BGC">
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="row">
+							<p><strong>Specialization:</strong> Handyman/Plumbing</p>
+						</div>
+						<div class="row">
+							<p><strong>Rating:</strong> 4.9</p>
+						</div>
+						<div class="row">
+							<p><strong>Location:</strong> Pag-asa, Quezon City</p>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#inviteToBid">Invite to Bid</button>
+						<button type="button" class="btn btn-danger btn-block">Flag this Genie</button>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="container-fluid search-result">
+					<div class="col-sm-3">
+						<div class="row text-center">
+							<p><strong>James Garcia</strong></p>
+						</div>
+						<div class="row">
+							<img src="../images/search/genie-2.jpg" class="img-thumbnail img-search" alt="BGC">
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="row">
+							<p><strong>Specialization:</strong> IT/Sotware</p>
+						</div>
+						<div class="row">
+							<p><strong>Rating:</strong> 4.9</p>
+						</div>
+						<div class="row">
+							<p><strong>Location:</strong> Capitol, Mandaluyong</p>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#inviteToBid">Invite to Bid</button>
+						<button type="button" class="btn btn-danger btn-block">Flag this Genie</button>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="container-fluid search-result">
+					<div class="col-sm-3">
+						<div class="row text-center">
+							<p><strong>Leonora Aquino</strong></p>
+						</div>
+						<div class="row">
+							<img src="../images/search/genie-3.jpg" class="img-thumbnail img-search" alt="BGC">
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="row">
+							<p><strong>Specialization:</strong> General Cleaning</p>
+						</div>
+						<div class="row">
+							<p><strong>Rating:</strong> 4.9</p>
+						</div>
+						<div class="row">
+							<p><strong>Location:</strong> West Crame, San Juan</p>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#inviteToBid">Invite to Bid</button>
+						<button type="button" class="btn btn-danger btn-block">Flag this Genie</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="inviteToBid" class="modal fade omg-modal" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title text-center">My Jobs</h4>
+			</div>
+			<div class="modal-body">
+				<div class="checkbox">
+					<label><input class="userTask" type="checkbox" value="">Clean 2 bedroom</label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success pull-left assign-task" data-dismiss="modal">Assign</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+.search-result{
+	padding-top:2%;
+	padding-left:3%;
+	padding-bottom:2%;
+	padding-right:2%;
+	border: 1px solid #E0E0E0;
+	border-radius: 20px;
+}
+
+.img-search{
+	width: 90%;
+    height: 90%;
+}
+
+.omg-modal{
+	position: fixed;
+	top: 10%;
+	bottom: 0;
+	left: 0;
+}
+</style>
+<script>
+$(document).ready(function()
+{
+	var isClicked = false;
+	
+	$('.assign-task').click(function(e) {
+		isClicked = true;
+	});
+	
+	$('#inviteToBid').on('hidden.bs.modal', function () {
+		if(isClicked)
+		{
+			$(".nav").find(".active").removeClass("active");
+			$(".nav").find(".user-timeline").addClass("active");
+			$("#user-content").load( "user/task/usertimeline.html",  function( responseTxt, statusTxt, xhr ) {
+				if(statusTxt == "error"){
+					var msg = "Oops! Sorry there was a problem loading the page.";
+					alert(msg);
+				}
+			});
+		}
+	});
+});
+</script>

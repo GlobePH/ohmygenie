@@ -1,0 +1,88 @@
+<div class="container-fluid main-content">
+	<h3 class="text-center">Update Account</h3>
+	<hr>
+	<form id="createTask">
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label for="jobTitle">Last Name: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input type="text" class="form-control" id="name" value="Jomar Nuguid">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label for="jobTitle">Frist Name: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input type="text" class="form-control" id="name" value="Jomar Nuguid">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label for="jobTitle">Middle Name: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input type="text" class="form-control" id="name" value="Jomar Nuguid">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label for="jobTitle">Username: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input type="text" class="form-control" id="userName" value="Vlodia_Cannon">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label for="jobDescription">Password: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input type="password" class="form-control" id="password">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label for="jobDescription">Confirm Password: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input type="password" class="form-control" id="confirmPassword">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label for="jobDescription">Email Address: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input type="text" class="form-control" id="txtLocation" name="email" value="jomarnuguid0830@gmail.com">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label for="jobDescription">Contact Number: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input type="text" class="form-control" id="txtPrice" name="contactNumber" value="+63 9173359382">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-sm-offset-4 form-group">
+				<button type="button" class="btn btn-default" id="saveUpdate">Save</button>
+				<button type="button" class="btn btn-default" id="cancelUpdate">Cancel</button>
+			</div>
+		</div>
+	</form>
+</div>
+<script>
+$(document).ready( function(){
+	$("#cancelUpdate").on("click", function(){
+		$("#user-content").load( "user/account/useraccount.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+});
+</script>

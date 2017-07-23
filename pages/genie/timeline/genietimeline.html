@@ -1,0 +1,65 @@
+<div class="container-fluid"  id="genie-timeline">
+	<h3 class="text-center">Timeline</h3>
+	<hr>
+	<table class="table table-hover">
+		<thead>
+		  <tr>
+			<th>Job ID</th>
+			<th>Job Title</th>
+			<th>Requestor</th>
+			<th>Target Completion</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<tr id="ABF-09943-13">
+				<td>
+					ABF-09943-13
+				</td>
+				<td>
+					Install Wallmount
+				</td>
+				<td>
+					Ardie Cruz
+				</td>
+				<td>
+					July 23, 2017
+				</td>
+			</tr>
+			<tr id="ABF-09972-76">
+				<td>
+					ABF-09972-76
+				</td>
+				<td>
+					Fix Furniture
+				</td>
+				<td>
+					Simon Vergara
+				</td>
+				<td>
+					July 25, 2017
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script>
+$(document).ready(function(){
+	$("#ABF-09943-13").on("click", function(){
+		$("#user-content").load( "genie/timeline/ABF-09943-13.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+	
+	$("#ABF-09972-76").on("click", function(){
+		$("#user-content").load( "genie/timeline/ABF-09972-76.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+});
+</script>

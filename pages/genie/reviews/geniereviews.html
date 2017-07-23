@@ -1,0 +1,106 @@
+<div class="container-fluid">
+	<h3 class="text-center">Reviews</h3>
+	<hr>
+	<div class="history-detail">
+		<p><strong><font size="4" color="#303030">Overall Genie Rating: </font></strong><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></p>
+	</div>
+	
+	<hr>
+	<div class="row">
+		<h4><strong>Users You Reviewed<strong></h4>
+	</div>
+	
+	<table class="table table-condensed" style="border-collapse:collapse;">
+
+			<tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+				<td>Michael Santos</td>
+				<td></td>
+				<td></td>
+				<td>Rating:   <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></td>
+				<td></td>
+			</tr>
+			<tr >
+				<td colspan="6" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo1"> 
+						<div class="container-fluid history-detail">
+							<div class="col-sm-5">
+								<div class="row">
+									<p><strong>Task Title:</strong> Driver for Hiking Trip</p>
+								</div>
+								
+							</div>
+							<div class="col-sm-4">
+								<div class="row">
+									<p><strong>Date Completed:</strong> May 13, 2017</p>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="row">
+									<button type="button" class="btn btn-default">Edit Review</button>
+								</div>
+							</div>
+						</div>
+						<div class="history-detail">
+							<p><strong>Review:</strong></p>
+							<p>User Michael Santos is generous and approachable. Cares for the welfare of the worker and provides food from time to time. He even gave tip for the early completion of the job!!!</p>
+						</div>
+		
+					</div> 
+					
+							
+				</td>
+			</tr>
+			<tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+				<td>John Bautista</td>
+				<td></td>
+				<td></td>
+				<td>Rating:   <span>☆</span><span>☆</span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="6" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo2"> 
+						<div class="container-fluid history-detail">
+							<div class="col-sm-5">
+								<div class="row">
+									<p><strong>Task Title:</strong> Deliver Groceries</p>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="row">
+									<p><strong>Date Completed:</strong> May 9, 2017</p>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="row">
+									<button type="button" class="btn btn-default">Edit Review</button>
+								</div>
+							</div>
+						</div>
+						<div class="history-detail">
+							<p><strong>Review:</strong></p>
+							<p>Very strict with time and difficult to deal with. Almost docked my pay for being late for only 30 SECONDS. Will avoid any job from this user from now on.</p>
+						</div>
+					</div> 
+				</td>
+			</tr>
+	</table>	
+	
+		
+	<div >
+		<button type="button" class="btn btn-default" id="newUserReview" >Review a User</button>
+	</div>
+		
+</div>
+<script>
+$(document).ready( function(){
+	$("#newUserReview").on("click", function(){
+		$("#user-content").load( "genie/reviews/newreview.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+});
+</script>

@@ -1,0 +1,67 @@
+<link href="../style/user-content.css" type="text/css" rel="stylesheet" />
+<div class="container-fluid main-content">
+	<h3 class="text-center">Jobs<h3>
+	<hr>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4 text-center">
+				<button type="button" class="btn btn-primary btn-md" id="createTask">Create Job</button>
+			</div>
+		</div>
+	<hr>
+	<h3 class="text-center">My Jobs</h3>
+	<hr>
+	<table class="table table-hover" style="border-collapse:collapse;">
+		<thead>
+		  <tr>
+			<th>Job ID</th>
+			<th>Job Title</th>
+			<th>Target Completion</th>
+			<th>Price</th>
+			<th>Payment Type</th>
+			<th></th>
+		  </tr>
+		</thead>
+		<tbody>
+			<tr class="jobItem" id="ABF-09875-56">
+				<td>
+					ABF-09875-56
+				</td>
+				<td>
+					Clean Bathroom
+				</td>
+				<td>
+					07/23/2017
+				</td>
+				<td>
+					Php 800
+				</td>
+				<td> 
+					Cash
+				</td>
+				<td>
+					<button type="button" class="btn btn-danger btn-sm" id="createTask">Cancel Job</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script>
+$(document).ready( function(){
+	$("#createTask").on("click", function(){
+		$("#user-content").load( "user/task/newtask.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+	$("#ABF-09875-56").on("click", function(){
+		$("#user-content").load( "user/task/ABF-09875-56.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+});
+</script>

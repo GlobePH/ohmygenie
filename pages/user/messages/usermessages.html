@@ -1,0 +1,93 @@
+<link href="../style/user-content.css" type="text/css" rel="stylesheet" />
+<div class="container-fluid main-content">
+
+	<h3 class="text-center">Inbox</h3>
+	<hr>
+	<table class="table table-hover" style="border-collapse:collapse;">
+		<thead>
+			<tr>
+				<th>From</th>
+				<th>Subject</th>
+				<th>Body</th>
+				<th></th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+				<td>Eloha Laurel</td>
+				<td>Delivery</td>
+				<td>Where should I leave these...</td>
+				<td>&nbsp;</td>
+				<td>June 24, 2017</td>
+			</tr>
+			<tr >
+				<td colspan="9" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo2"> 
+						<div>
+							<p><strong>From:</strong> Eloha Laurel </p>
+							<p><strong>Subject:</strong> Delivery </p>
+							<p>Where should I leave these groceries that you requested to be delivered?</p>
+						</div>
+					</div> 
+				</td>
+			</tr>
+			<tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
+				<td>Boy Logro</td>
+				<td>Cooking</td>
+				<td>What dishes should...</td>
+				<td>&nbsp;</td>
+				<td>May 13, 2017</td>
+			</tr>
+			<tr >
+				<td colspan="9" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo3"> 
+						<div>
+							<p><strong>From:</strong> Boy Logro </p>
+							<p><strong>Subject:</strong> Welcome New User </p>
+							<p>What dishes should be prepared for you, your majesty?</p>
+						</div>
+					</div> 
+				</td>
+			</tr>
+			<tr data-toggle="collapse" data-target="#demo4" class="accordion-toggle">
+				<td>OhMyGenie Admin</td>
+				<td>Welcome New User</td>
+				<td>Greetings!</td>
+				<td>&nbsp;</td>
+				<td>March 15, 2017</td>
+			</tr>
+			<tr >
+				<td colspan="9" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo4"> 
+						<div>
+							<p><strong>From:</strong> OhMyGenie Admin </p>
+							<p><strong>Subject:</strong> Welcome New User </p>
+							<p>Greetings! Glad to have you onboard.</p>
+						</div>
+					</div> 
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script>
+$(document).ready( function(){
+	$("#createTask").on("click", function(){
+		$("#user-content").load( "user/task/newtask.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+	$("#ABF-09875-56").on("click", function(){
+		$("#user-content").load( "user/task/ABF-09875-56.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+});
+</script>

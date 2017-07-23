@@ -1,0 +1,111 @@
+<div class="container-fluid main-content" id="user-timeline">
+	<h3 class="text-center">Timeline</h3>
+	<hr>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong>Job ID</strong>
+		</div>
+		<div class="col-sm-4">
+			ABF-09972-76
+		</div>
+		<div class="col-sm-2">
+			<strong>Job Title</strong>
+		</div>
+		<div class="col-sm-3">
+			Fix Furniture
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong>Description</strong>
+		</div>
+		<div class="col-sm-7">
+			Need Worker who can fix a 2 broken legs of chair. No Materials yet, wood made of Yakal.
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong>Worker</strong>
+		</div>
+		<div class="col-sm-4">
+			Simon Vergara
+		</div>
+		<div class="col-sm-2">
+			<strong>Target Completion</strong>
+		</div>
+		<div class="col-sm-3">
+			July 23, 2017
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong>Price</strong>
+		</div>
+		<div class="col-sm-4">
+			Php 400
+		</div>
+		<div class="col-sm-2">
+			<strong>Payment Type</strong>
+		</div>
+		<div class="col-sm-3">
+			Cash 
+		</div>
+	</div>
+	<hr>
+		<button type="button" class="btn btn-success" id="addLog">Mark as Complete</button>
+		<button type="button" class="btn btn-danger" id="addLog">File a Dispute</button>
+	<hr>
+	<div class="row">
+		<strong>Job Log</strong>
+	</div>
+	<div class="row">
+		<table class="table">
+			<thead>
+				<tr>
+					<td>Date</td>
+					<td>Action</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>07-15-2017 09:26 AM</td>
+					<td>Job Created</td>
+				</tr>
+				<tr>
+					<td>07-17-2017 12:52 PM</td>
+					<td>Worker Accepted</td>
+				</tr>
+			</body>
+		</table>
+	</div>
+	<hr>
+	<div class="row">
+		<form>
+			<div class="col-sm-8">
+				<textarea class="form-control" rows="4" id="logentry"></textarea>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<button type="button" class="form-control" class="btn btn-default" id="addLog">Add Log</button>
+					<br/>
+					<button type="button" class="form-control" class="btn btn-default" id="uploadPhoto">Upload Photo</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<hr>
+	<div class="row">
+		<form>
+			<div class="col-sm-3">
+				<button class="form-control" type="button" class="btn btn-default" id="backCmd">Back</button>
+			<div class="col-sm-3">
+		</form>
+	</div>
+</div>
+<script>
+$(document).ready(function(){
+	$("#backCmd").on("click", function(){
+		$("#user-timeline").trigger("click");
+	});
+});
+</script>

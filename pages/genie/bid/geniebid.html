@@ -1,0 +1,104 @@
+<div class="container-fluid">
+	<h3 class="text-center">Available Tasks</h3>
+	<hr>
+	<table class="table table-condensed" style="border-collapse:collapse;">
+		<thead>
+			<tr>
+				<th>Job Title</th>
+				<th>Category</th>
+				<th>Date Needed</th>
+				<th>Price</th>
+				<th>Payment</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+				<td>General Cleaning</td>
+				<td>Cleaning</td>
+				<td>July 23, 2017</td>
+				<td>Php 800.00</td>
+				<td>Cash</td>
+				<td><button type="button" class="btn btn-default" id="bidTask1">Bid</button></td>
+			</tr>
+			<tr >
+				<td colspan="9" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo1"> 
+						<div>
+							<p><strong>Task Title:</strong> General Cleaning</p>
+							<p><strong>Description:</strong></p>
+							<p>General cleaning needed for 2 bedrooms</p>
+						</div>
+					</div> 
+				</td>
+			</tr>
+			<tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+				<td>Deliver Packages</td>
+				<td>Delivery</td>
+				<td>July 24, 2017</td>
+				<td>Php 1,000.00</td>
+				<td>Card</td>
+				<td><button type="button" class="btn btn-default" id="bidTask2">Bid</button></td>
+			</tr>
+			<tr >
+				<td colspan="9" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo2"> 
+						<div>
+							<p><strong>Task Title:</strong> Deliver Packages</p>
+							<p><strong>Description:</strong></p>
+							<p>Need to deliver to 8 different locations within Quezon City, San Juan City and Makati City.</p>
+						</div>
+					</div> 
+				</td>
+			</tr>
+			<tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
+				<td>Cook Dinner</td>
+				<td>Cooking</td>
+				<td>July 23, 2017</td>
+				<td>Php 1,200.00</td>
+				<td>Cash</td>
+				<td><button type="button" class="btn btn-default" id="bidTask3">Bid</button></td>
+			</tr>
+			<tr >
+				<td colspan="9" class="hiddenRow">
+					<div class="accordian-body collapse" id="demo3"> 
+						<div>
+							<p><strong>Task Title:</strong> Cook Dinner</p>
+							<p><strong>Description:</strong></p>
+							<p>Filipino Dish for 8 people</p>
+						</div>
+					</div> 
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<script>
+$(document).ready( function(){
+	$("#bidTask1").on("click", function(){
+		$("#user-content").load( "genie/bid/ABF-09875-56.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+	$("#bidTask2").on("click", function(){
+		$("#user-content").load( "genie/bid/ABF-09311-68.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+	$("#bidTask3").on("click", function(){
+		$("#user-content").load( "genie/bid/ABF-09004-21.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});	
+});
+</script>

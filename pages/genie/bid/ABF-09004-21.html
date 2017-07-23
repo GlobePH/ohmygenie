@@ -1,0 +1,117 @@
+<link href="../style/user-content.css" type="text/css" rel="stylesheet" />
+<div class="container-fluid main-content" id="user-timeline">
+	<h3 class="text-center">Task Details</h3>
+	<hr>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong>Job ID</strong>
+		</div>
+		<div class="col-sm-4">
+			ABF-09004-21
+		</div>
+		<div class="col-sm-2">
+			<strong>Job Title</strong>
+		</div>
+		<div class="col-sm-3">
+			Cook Dinner for 4 persons
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong>Description</strong>
+		</div>
+		<div class="col-sm-7">
+			Know how to cook Italian dishes and can cook meals for 30 minutes max. Ingridients are to be provided.
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong>Target Completion</strong>
+		</div>
+		<div class="col-sm-3">
+			July 23, 2017
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			<strong>Price</strong>
+		</div>
+		<div class="col-sm-4">
+			Php 1,200
+		</div>
+		<div class="col-sm-2">
+			<strong>Payment Type</strong>
+		</div>
+		<div class="col-sm-3">
+			Credit Card 
+		</div>
+	</div>
+		<hr>
+	<div class="row">
+		<div class="col-sm-12">
+			<strong>Bid Logs</strong>
+		</div>
+	</div>
+	<div class="row">
+		<table class="table">
+			<thead>
+				<tr>
+					<td>Date</td>
+					<td>Genie Bid</td>
+					<td>Status</td>
+					<td>User Bid</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>06-14-2017 02:54 PM</td>
+					<td>Php 1,400</td>
+					<td>Declined</td>
+					<td>Php 1,250</td>
+				</tr>
+				<tr>
+					<td>06-15-2017 10:01 AM</td>
+					<td>Php 1,300</td>
+					<td>Declined</td>
+					<td>Php 1,250</td>
+				</tr>
+				<tr>
+					<td colspan=4>
+					
+	<div class="row">
+		<form>
+			<div class="col-sm-8">
+				<textarea class="form-control" rows="4" id="logentry"></textarea>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+						<button type="button" class="btn btn-success btn-block acceptBid">Accept Bid</button>
+						<button type="button" class="btn btn-primary btn-block">Post New Bid</button>
+						<button type="button" class="btn btn-danger btn-block">Decline Job</button>
+				</div>
+			</div>
+		</form>
+	</div>
+					</td>
+				</tr>
+			</body>
+		</table>
+	</div>
+
+</div>
+<script>
+$(document).ready(function(){
+	$(".acceptBid").on("click", function(){
+	
+		$(".nav").find(".active").removeClass("active");
+		$(".nav").find(".user-timeline").addClass("active");
+	
+		$("#user-content").load( "genie/timeline/genietimeline.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+});
+</script>

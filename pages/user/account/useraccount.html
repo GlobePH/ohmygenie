@@ -1,0 +1,177 @@
+<div class="container-fluid main-content">
+	<h3 class="text-center">User Account</h3>
+	<hr>
+	<form>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label>Email Address: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<p>jomarnuguid0830@gmail.com</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-4 form-group">
+				<button type="button" class="btn btn-default" id="updateAccount">Update Account</button>
+			</div>
+		</div>
+	</form>	
+	<h3 class="text-center">User Profile</h3>
+	<hr>
+	<form>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label>Name: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<p>Jomar Nuguid</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label>Address: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<p>Tower 1, Avida Towers New Manila, Quezon City</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label>Contact Number: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<p>+63 9173359382</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-4 form-group">
+				<button type="button" class="btn btn-default" id="updateAccount">Update Profile</button>
+			</div>
+		</div>
+	</form>
+	<hr>
+	<h3 class="text-center">User Verification</h3>
+	<form>
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label>Email: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<p>jomarnuguid0830@gmail.com &nbsp <img src="../images/util/check.png" alt="Kuala Lumpur" width="25" height="25">
+				</p>
+			</div>
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label>Mobile: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<p>+63 9173359382 &nbsp <img src="../images/util/check.png" alt="Kuala Lumpur" width="25" height="25">
+				</p>
+			</div>
+			<div class="col-sm-3 col-sm-offset-1 form-group">
+				<label>Identification Card: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<p>Passport Uploaded &nbsp <img src="../images/util/check.png" alt="Kuala Lumpur" width="25" height="25">
+				</p>
+			</div>
+			<div class="row">
+				<div class="col-sm-3 col-sm-offset-4 form-group">
+					<button type="button" class="btn btn-default" data-toggle="modal" href="#loginModal">Submit Files</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div id="loginModal" class="modal fade omg-modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+	<form id="userLogin">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Upload Files</h4>
+		  </div>
+		  <div class="modal-body">
+			<input id="fileupload" type="file" name="files[]" data-url="server/php/" multiple>
+			<div id="progress">
+				<div class="bar" style="width: 0%;"></div>
+			</div>
+			
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+			<script src="js/vendor/jquery.ui.widget.js"></script>
+			<script src="js/jquery.iframe-transport.js"></script>
+			<script src="js/jquery.fileupload.js"></script>
+			<script>
+			$(function () {
+			    $('#fileupload').fileupload({
+			        dataType: 'json',
+        			done: function (e, data) {
+            			$.each(data.result.files, function (index, file) {
+                			$('<p/>').text(file.name).appendTo(document.body);
+            			});
+        			}
+    			});
+				$('#fileupload').fileupload({
+					progressall: function (e, data) {
+					var progress = parseInt(data.loaded / data.total * 100, 10);
+						$('#progress .bar').css(
+							'width',progress + '%');
+					}
+				});
+				$(function () {
+					$('#fileupload').fileupload({
+						dataType: 'json',
+						add: function (e, data) {
+						data.context = $('<button/>').text('Upload')
+							.appendTo(document.body)
+						.click(function () {
+							data.context = $('<p/>').text('Uploading...').replaceAll($(this));
+							data.submit();
+						});
+					},
+					done: function (e, data) {
+					data.context.text('Upload finished.');
+					}
+				});
+				});
+			});
+			</script>
+		  </div>
+		  <div class="modal-footer">		  
+			<button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" href="#fileUploadModal">Save&nbsp;&nbsp;</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	</form>
+  </div>
+</div>
+
+<div id="fileUploadModal" class="modal fade omg-modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+		<div class="row">
+			<p class="text-center">File upload successful!</p>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready( function(){
+	$("#updateAccount").on("click", function(){
+		$("#user-content").load( "user/account/updateaccount.html",  function( responseTxt, statusTxt, xhr ) {
+			if(statusTxt == "error"){
+				var msg = "Oops! Sorry there was a problem loading the page.";
+				alert(msg);
+			}
+		});
+	});
+});
+</script>

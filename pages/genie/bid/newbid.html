@@ -1,0 +1,78 @@
+<div class="container-fluid">
+	<h3 class="text-center">Create New Task</h3>
+	<hr>
+	<form id="createTask">
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobTitle">Job Title: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input class="form-control" id="jobTitle" name="jobTitle" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobCategory">Category: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<button class="btn btn-block btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="jobCategory">Select Category <span class="caret"></span></button>
+				<ul class="dropdown-menu" style="left:0;">
+					<li><a href="#">HTML</a></li>
+					<li><a href="#">CSS</a></li>
+					<li><a href="#">JavaScript</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobDescription">Description: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<textarea class="form-control" rows="5" id="jobDescription"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobDescription">Location: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input class="form-control" id="txtLocation" name="Location" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobDescription">Price </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input class="form-control" id="txtPrice" name="txtPrice" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label>Payment Type:</label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<button class="btn btn-block btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="jobCategory">Select Payment Method <span class="caret"></span></button>
+				<ul class="dropdown-menu" style="left:0;">
+					<li><a href="#">Cash</a></li>
+					<li><a href="#">Mastercard **** 4836</a></li>
+					<li><a href="#">Visa **** 4836</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobDescription">Date Needed: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input class="form-control" id="txtDate" name="txtDate" placeholder="Date Needed" type="date">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-sm-offset-1 form-group">
+				<button type="button" class="btn btn-default" id="createTask">Submit</button>
+				<button type="button" class="btn btn-default" id="createTask">Cancel</button>
+			</div>
+		</div>
+	</form>
+</div>

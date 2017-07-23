@@ -1,0 +1,84 @@
+<div class="container-fluid main-content">
+	<h3 class="text-center">Create New Job</h3>
+	<hr>
+	<form id="createTask">
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobTitle">Job Title: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input class="form-control" id="jobTitle" name="jobTitle" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobCategory">Category: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<select class="form-control">
+					<option style="display:none"> -- select category -- </option>
+					<option>Handyman</option>
+					<option>Pickup/Delivery</option>
+					<option>Furniture Assembly/Fix</option>
+					<option>Cleaning</option>
+					<option>Gardening</option>
+					<option>Service</option>
+					<option>Office/Paper Works</option>
+					<option>Computer/IT</option>
+					<option>Other</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobDescription">Description: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<textarea class="form-control" rows="5" id="jobDescription"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobDescription">Location: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input class="form-control" id="txtLocation" name="Location" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobDescription">Price </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input class="form-control" id="txtPrice" name="txtPrice" type="text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label>Payment Type:</label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<select class="form-control">
+					<option style="display:none"> -- select payment method -- </option>
+					<option>Cash</option>
+					<option>Mastercard **** 4836</option>
+					<option>Visa **** 4836</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-1 form-group">
+				<label for="jobDescription">Date Needed: </label>
+			</div>
+			<div class="col-sm-7 form-group">
+				<input class="form-control" id="txtDate" name="txtDate" placeholder="Date Needed" type="date">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-sm-offset-1 form-group">
+				<button type="button" class="btn btn-default" id="createTask">Submit</button>
+				<button type="button" class="btn btn-default" id="createTask">Cancel</button>
+			</div>
+		</div>
+	</form>
+</div>
